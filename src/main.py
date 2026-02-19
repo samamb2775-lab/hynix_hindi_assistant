@@ -73,28 +73,83 @@ def speak_hindi(text):
 # --- 3. Command Logic (Hindi) ---
 def process_command(text):
     # Check for Hindi words in the text
-    
-    if "नमस्ते" in text or "हलो" in text or "नमस्कार" in text:
-        speak_hindi("Namaste! Aap kaise hain?")
-        
-    elif "कैसे" in text and "हो" in text:
-        speak_hindi("Main bilkul theek hoon. Shukriya.")
-        
-    elif "कौन" in text or "नाम" in text:
-        speak_hindi("Main Rohan hoon. Aapka personal assistant.")
-
-    elif "समय" in text or "टाइम" in text or "बज" in text:
-        from datetime import datetime
-        t = datetime.now().strftime("%I:%M %p")
-        speak_hindi(f"Abhi samay hai {t}")
-        
-    elif "बंद" in text or "रुको" in text or "स्टॉप" in text:
-        speak_hindi("Theek hai. Alvida.")
-        if stream is not None:
-            stream.stop_stream()
-            stream.close()
-        p.terminate()
-        sys.exit(0)
+if "नमस्त"े in text or "हलो" in text:
+speak_hindi("नमस्त,े आप कैसेहैं")
+elif "कैसे" in text:
+speak_hindi("मैंबि लकुल ठीक हूँ। शक्रिुक्रिया।.")
+elif "कौन" in text or "नाम" in text:
+speak_hindi("मैंहूँहाइनि क्स. आपका नि जी सहायक")
+elif "प्रसि द्ध झील" in text:
+speak_hindi("उन्नकल झील")
+elif "प्रसि द्ध मठ" in text:
+speak_hindi("सि द्धारूढ़ मठ")
+elif "धारवाड़ बस नबं र" in text:
+speak_hindi("दो सौ एक बी सि टी बस")
+elif "प्रसि द्ध पार्क" in text:
+speak_hindi("इंदि रा गांधी ग्लास हाउस")
+elif "मख्ु य बस सेवा" in text:
+speak_hindi("सि टी बस सेवा")
+elif "एयरपोर्ट स्थान" in text:
+speak_hindi("गोकुल रोड पास")
+elif "बेलगावी बस अतं राल" in text:
+speak_hindi("तीस सेपतैं ालीस मि नट")
+elif "रेलवेजोन" in text:
+speak_hindi("दक्षि ण पश्चि म रेलवे")
+elif "धारवाड़ दरूी" in text:
+speak_hindi("लगभग बीस कि मी")
+elif "हूब्बल्ली-धारवाड़" in text:
+speak_hindi("ट्वि न सि टी")
+elif "बेंगलरुु ट्रेन समय" in text:
+speak_hindi("सबु ह सबु ह छह बजकर पद्रं ह मि नट")
+elif "बाजार बदं दि न" in text:
+speak_hindi("रवि वार")
+elif "मि ठाई" in text:
+speak_hindi("धारवाड़ पेड़ा")
+elif "मौसम कैसा है" in text:
+speak_hindi("यहाँमौसम सहुावना रहता है")
+elif "नदी" in text:
+speak_hindi("मलप्रभा नदी पास है")
+elif "प्रसि द्ध भोजन" in text:
+speak_hindi("जोलादा रोटी और एंगाई")
+elif "आईआईटी कहाँहै" in text:
+speak_hindi("आईआईटी धारवाड़ मेंस्थि त है")
+elif "नजदीकी पर्यटर्य न स्थल" in text:
+speak_hindi("दांदेली और गोकर्ण पास हैं")
+elif "स्थानीय भाषा" in text:
+speak_hindi("कन्नड़ मख्ु य भाषा है")
+elif "प्रसि द्ध त्योहार" in text:
+speak_hindi("गणेश चतर्थीु र्थी यहाँधमू धाम सेमनाई जाती है")
+elif "बड़ा अस्पताल" in text:
+speak_hindi("कि म्स अस्पताल सबसेबड़ा है")
+elif "घमू नेका समय" in text:
+speak_hindi("अक्टूबर सेफरवरी के बीच")
+elif "पि न कोड" in text:
+speak_hindi("हुबली का पि न कोड पांच आठ शन्ूय शन्ूय दो शन्ूय है")
+elif "कर्ना टक वि श्ववि द्यालय" in text:
+speak_hindi("यह धारवाड़ मेंस्थि त है")
+elif "समय" in text or "टाइम" in text or "बज" in text:
+from datetime import datetime
+t = datetime.now().strftime("%I:%M %p")
+speak_hindi(f"अभी, समय है{t}")
+elif "तारीख" in text or "डटे " in text:
+from datetime import datetime
+d = datetime.now().strftime("%d %B %Y")
+speak_hindi(f"आज की तारीख है{d}")
+elif "दि न" in text:
+from datetime import datetime
+day = datetime.now().strftime("%A")
+speak_hindi(f"आज {day} है")
+elif "महीना" in text:
+from datetime import datetime
+month = datetime.now().strftime("%B")
+speak_hindi(f"अभी {month} का महीना चल रहा है")
+elif "बदं " in text or "रुको" in text or "स्टॉप" in text:
+speak_hindi("ठीक हैआपका बहुत धन्यवाद")
+if stream is not None:
+stream.stop_stream()
+stream.close()
+p.terminate()
+sys.exit(0)
 
 # --- 4. Main Loop ---
 def main():
